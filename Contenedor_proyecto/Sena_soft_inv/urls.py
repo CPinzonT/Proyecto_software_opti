@@ -14,9 +14,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+# sena_soft_inv/urls.py
 
+from django.contrib import admin
+from django.urls import path, include
+from aplicacion1.views import index  # Importar la vista index
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('aplicacion1/', include('aplicacion1.urls')),
+    path('', index, name='index'),  # Ruta para el index
 ]

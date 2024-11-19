@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error de Stock</title>
+</head>
+<body>
+    <h1>Error de Stock Insuficiente</h1>
+    <p>El producto {{ producto.Nombre }} no tiene suficiente stock disponible para esta venta.</p>
+    <a href="{% url 'agregar_venta' %}">Regresar a Agregar Venta</a>
+</body>
+</html>

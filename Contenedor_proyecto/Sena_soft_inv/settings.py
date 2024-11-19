@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'aplicacion1'
 ]
 
+# Modelo de usuario personalizado
+#AUTH_USER_MODEL = 'aplicacion1.Usuario'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'Sena_soft_inv.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Ventas</title>
+    <style>
+        /* Estilo para el cuerpo */
+        body {
+            background-color: #d3d3d3; /* Gris claro */
+        }
+        /* Estilo para las cabeceras de la tabla */
+        th {
+            background-color: #a9a9a9; /* Gris más oscuro */
+            color: black; /* Texto negro */
+            padding: 10px;
+        }
+        /* Estilo para las filas */
+        td {
+            background-color: #b0c4de; /* Gris ligeramente más oscuro */
+            color: black; /* Texto negro */
+            padding: 10px;
+        }
+        /* Estilo para los botones */
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            width: 200px;
+            text-align: center;
+            margin: 10px auto; /* Centra los botones */
+        }
+        .btn-agregar {
+            background-color: #28a745; /* Verde */
+        }
+        .btn-agregar:hover {
+            background-color: #218838; /* Verde más oscuro al pasar el ratón */
+            
+        }
+        .btn-home {
+            background-color: #007bff; /* Azul */
+            
+        }
+        .btn-home:hover {
+            background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+            
+        }
+    </style>
+</head>
+<body>
+    <img src="https://ideogram.ai/assets/image/lossless/response/pZ6hsQiHTWOCGRolbRcbcA" alt="Imagen en la parte superior derecha" style="position: absolute; top: 10px; right: 10px; width: 150px; height: auto;">
+
+    <h1>Lista de Ventas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Fecha de Venta</th>
+                <th>Total de Venta</th>
+                <th>Usuario</th>
+                <th>Detalle</th> <!-- Columna de detalle -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for venta in ventas %}
+            <tr>
+                <td>{{ venta.id }}</td>
+                <td>{{ venta.cliente.nombre }}</td>
+                <td>{{ venta.fecha_venta }}</td>
+                <td>{{ venta.total_venta }}</td>
+                <td>{{ venta.usuario.nombre }}</td>
+                <td>
+                    <a href="{% url 'detalle_venta' venta.id %}">Ver Detalle</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No hay ventas disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Botón para agregar una nueva venta -->
+    <a href="{% url 'agregar_venta' %}" class="btn btn-agregar">Agregar Venta</a>
+
+    <!-- Botón para regresar a Home -->
+    <a href="{% url 'index' %}" class="btn btn-home">Regresar a Home</a>
+</body>
+</html>

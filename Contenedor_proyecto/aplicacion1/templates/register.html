@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <style>
+        /* Estilo para el cuerpo */
+        body {
+            background-color: #d3d3d3; /* Gris claro */
+            font-family: Arial, sans-serif;
+        }
+        /* Estilo para las cabeceras de la tabla */
+        th {
+            background-color: #a9a9a9; /* Gris más oscuro */
+            color: black; /* Texto negro */
+            padding: 10px;
+        }
+        /* Estilo para las filas */
+        td {
+            background-color: #b0c4de; /* Gris ligeramente más oscuro */
+            color: black; /* Texto negro */
+            padding: 10px;
+        }
+        /* Contenedor de botones para centrarlos */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        /* Estilo para el botón de agregar proveedor */
+        .btn-agregar {
+            padding: 10px 20px;
+            background-color: #28a745; /* Verde */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-agregar:hover {
+            background-color: #218838; /* Verde más oscuro */
+        }
+        /* Estilo para el botón de regresar */
+        .btn-regresar {
+            padding: 10px 20px;
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-regresar:hover {
+            background-color: #0056b3; /* Azul más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrar Usuario</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+        <p style="color: green;">{{ success }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br>
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" id="usuario" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <label for="rol">Rol:</label>
+        <select name="rol" id="rol">
+            <option value="admin">Administrador</option>
+            <option value="cajero">Cajero</option>
+        </select>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

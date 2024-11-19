@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPTIMED</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            margin-top: 20px;
+        }
+        .btn-custom {
+            width: 100%;
+        }
+        /* Estilos para la imagen en la esquina inferior derecha */
+        .corner-image {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 300px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+        }
+        /* Estilos para el logo */
+        .logo {
+            max-width: 100%; /* Asegura que el logo no sobrepase el contenedor */
+            height: auto; /* Mantiene las proporciones de la imagen */
+            display: block;
+            margin: 0 auto; /* Centra la imagen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Aquí es donde antes estaba el título -->
+        <img src="https://ideogram.ai/assets/image/lossless/response/pZ6hsQiHTWOCGRolbRcbcA" alt="Logo de OPTIMED" class="logo" width="200">
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Productos</h5>
+                        <p class="card-text">Administra tus productos.</p>
+                        <a href="{% url 'productos' %}" class="btn btn-primary btn-custom">Ir a Productos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ventas</h5>
+                        <p class="card-text">Gestiona las ventas realizadas.</p>
+                        <a href="{% url 'ventas' %}" class="btn btn-success btn-custom">Ir a Ventas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Clientes</h5>
+                        <p class="card-text">Ver y editar clientes registrados.</p>
+                        <a href="{% url 'clientes' %}" class="btn btn-info btn-custom">Ir a Clientes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Proveedores</h5>
+                        <p class="card-text">Administrar proveedores.</p>
+                        <a href="{% url 'proveedores' %}" class="btn btn-warning btn-custom">Ir a Proveedores</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ordenes de Compra</h5>
+                        <p class="card-text">Ver y gestionar órdenes de compra.</p>
+                        <a href="{% url 'ordenes' %}" class="btn btn-danger btn-custom">Ir a Ordenes de Compra</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Usuarios</h5>
+                        <p class="card-text">Ver y gestionar usuarios.</p>
+                        <a href="{% url 'usuarios' %}" class="btn btn-custom" style="background-color: #ff7f00; color: white;">Ir a usuarios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Imagen en la esquina inferior derecha -->
+    <img src="https://cdn.aarp.net/content/dam/aarp/health/healthy-living/2019/04/1140-sunglasses-esp.jpg" alt="Imagen decorativa" class="corner-image">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
